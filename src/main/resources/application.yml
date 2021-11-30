@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: my_spring_boot_app
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+# Apache Camel
+camel:
+  springboot:
+    main-run-controller: true
+    stream-caching-enabled: true
+    jmx-enabled: false
+  component:
+    elasticsearch-rest:
+      host-addresses: localhost:9200
+      user: taejin
+      password: 30539w
